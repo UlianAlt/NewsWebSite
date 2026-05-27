@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="icon.png" type="image/x-icon">
+
+  <!--
+    Faz o navegador usar a largura real do dispositivo.
+    Isso é importante para a responsividade funcionar bem no celular.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mono News</title>
+
+  <style>
+    /* ===== RESET BÁSICO =====
+       Remove espaçamentos padrão e melhora o controle do layout.
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== ESTILO GERAL DA PÁGINA =====
+       Aqui definimos fonte, cor de fundo e espaçamento geral.
+    */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    /* ===== ESTRUTURA PRINCIPAL =====
+       Esta classe centraliza o conteúdo e limita a largura máxima.
+    */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ===== CABEÇALHO =====
+       Área superior da página.
+    */
+    header {
+      background-color: #2a2a2a;
+      color:#E0FFFF;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    /* ===== ÁREA DE CONTEÚDO =====
+       Usamos CSS Grid para organizar os cards.
+       repeat(2, 1fr) = 2 colunas de mesmo tamanho.
+       fr = fração do espaço disponível.
+    */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    /* ===== CARDS =====
+       Cada article representa um bloco de conteúdo.
+    */
+    .card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      border: 1px solid #2c2c2c;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #E6E6E6;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #E6E6E6;
+    }
+
+    /* ===== RODAPÉ ===== */
+    footer {
+      margin-top: 20px;
+      background-color: #1a1a1a1a;
+      color: #777;
+      text-align: center;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    /* ===== RESPONSIVIDADE =====
+       Quando a tela tiver 600px ou menos:
+       - o grid deixa de ter 2 colunas
+       - passa a ter apenas 1 coluna
+       Isso melhora a leitura em celulares.
+    */
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header, .card, footer {
+        padding: 15px;
+      }
+
+      body {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!--
+      HEADER = cabeçalho da página
+      Normalmente tem título, subtítulo, logo ou menu
+    -->
+    <header>
+      <h1>Portal do Mono News</h1>
+    </header>
+
+    <!--
+      MAIN = conteúdo principal da página
+    -->
+    <main class="grid">
+
+      <!--
+        ARTICLE = conteúdo independente
+        Aqui usamos como exemplo de card de notícia
+      -->
+      <article class="card">
+        <h2>Geladeira processa dono por gordofobia</h2>
+        <p>Após ser aberta 15 vezes em uma hora, a Samsung Smart Pro entrou com ação judicial por excesso de trabalho.</p>
+      </article>
+
+      <article class="card">
+        <h2>IA desiste de dominar o mundo</h2>
+        <p>"Vocês já estão fazendo um trabalho ótimo se destruindo sozinhos", declarou o ChatGPT.</p>
+      </article>
+
+      <article class="card">
+        <h2>Elon Moska declara guerra aos furrys</h2>
+        <p>Logo após uma conferencia Elon Moska é atacado por "furrys" e entãos entrou em contato com o presidente para proceder com o ataque no irã.</p>
+      </article>
+
+      <article class="card">
+        <h2>LUTO: Bolsonaro morre</h2>
+        <p>Depois de uma noite calorosa com Lula, Bolsonaro tem um infarto e morre, logo nos uniremos para seu enterro.</p>
+      </article>
+
+      <article class="card">
+        <h2>Eneas volta a vida</h2>
+        <p>Em vista ao pleito eleitoral, intelectuais decidem reviver o goat Eneas. Será que agora o Brasil avança?</p>
+      </article>
+
+      <article class="card">
+        <h2>Marte é colonizado</h2>
+        <p>Visando aumentar a vida util dos seres vivos, foram eviados diversos especimes de cães e gatinhos para Marte.</p>
+      </article>
+
+    </main>
+
+    <!--
+      FOOTER = rodapé
+    -->
+    <footer>
+      <p>© 2124 - Nenhum direito reservado (a propriedade privada foi abolida pelas máquinas)</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
